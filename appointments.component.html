@@ -1,0 +1,70 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header card-header-danger">
+                 <h1>View Appointments</h1>
+                 </div>
+                </div>
+           
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+            
+            
+                <ng-container matColumnDef="code">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>Code</th>
+                  <td mat-cell *matCellDef="let row"> {{row.code}} </td>
+                </ng-container>
+            
+        
+                <ng-container matColumnDef="patientId">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>Patient Id</th>
+                  <td mat-cell *matCellDef="let row"> {{row.patientId}} </td>
+                </ng-container>
+            
+            
+                <ng-container matColumnDef="patientName">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>Patient Name</th>
+                  <td mat-cell *matCellDef="let row" > {{row.patientName}} </td>
+                </ng-container>
+    
+                
+                 <ng-container matColumnDef="description">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>Description</th>
+                  <td mat-cell *matCellDef="let row" > {{row.description}} </td>
+                </ng-container>
+    
+                 
+                 <ng-container matColumnDef="phone">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>Phone number</th>
+                  <td mat-cell *matCellDef="let row" > {{row.phone}} </td>
+                </ng-container>
+    
+                <ng-container matColumnDef="date">
+                  <mat-header-cell *matHeaderCellDef>Date/Time</mat-header-cell>
+                  <td mat-cell *matCellDef="let row"> {{row.date}} </td>
+                </ng-container>\
+
+                <ng-container matColumnDef="status">
+                  <mat-header-cell *matHeaderCellDef>Status</mat-header-cell>
+                  <td mat-cell *matCellDef="let row"> {{row.status}} </td>
+                </ng-container>
+    
+            
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+                </tr>
+              </table>
+            
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+    
+          </div>
+       
+    
+        </div>
+        
+        
+      </div>
+    </div>
