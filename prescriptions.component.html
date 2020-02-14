@@ -1,0 +1,34 @@
+<mat-toolbar>
+    <span>{{service.form.controls['$key'].value?"Modify Prescription":"New Prescription"}}</span>
+    <span class="fill-remaining-space"></span>
+    <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1"><mat-icon >clear</mat-icon></button>
+  </mat-toolbar>
+                  
+  <form [formGroup]="service.form" class="normal-form" (submit)="onSubmit()">
+                      
+      <div class="controls-container">
+                            <input type="hidden" formControlName="$key">
+                            <mat-form-field>
+                              <input formControlName="nic" matInput placeholder="NIC of Patient*">
+                              <mat-error> This is field is mandatory.</mat-error>
+                            </mat-form-field>
+                          
+                            <mat-form-field>
+                              <input formControlName="medicine" matInput placeholder="Medicine*">
+                              <mat-error *ngIf="service.form.controls['medicine'].errors?.required"> This is field is mandatory.</mat-error>
+
+                            </mat-form-field>
+                            <mat-form-field>
+                              <input formControlName="dose" matInput placeholder="Dosage*">
+                              <mat-error *ngIf="service.form.controls['dose'].errors?.required"> This is field is mandatory.</mat-error>
+                            </mat-form-field>
+  
+                    
+                            <div class="button-row">
+                              <button mat-raised-button color="primary" type="submit" [disabled]="service.form.invalid">Submit</button>
+                              <button mat-raised-button color="warn" (click)="onClear()">Clear</button>
+                            </div>
+      </div>
+                     
+  </form>
+    

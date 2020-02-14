@@ -1,0 +1,55 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  td, th {
+    width: 25%;
+  }
+
+  form.normal-form{
+    margin: 10px;
+  }
+
+  .control-container{
+    width: 100%;
+    padding: 5%;
+  }
+
+  .control-container > *{
+    width: 100%;
+  }
+
+  .add-bottom-padding{
+    padding-bottom: 10px;
+  }
+
+  .button-row button{
+    margin: 5px;
+  }
+
+  /*notification */
+
+snack-bar-container.success{
+  background-color: #5cb85c;
+  color: #fff;
+}
+
+snack-bar-container.notification simple-snack-bar{
+  font-size: 18px !important;
+  font-weight: bold;
+}
+
+/*for form close */
+.btn-dialog-close{
+  width: 45px;
+  min-width: 0px !important;
+  height: 40px;
+  padding: 0px !important;
+}
+  
