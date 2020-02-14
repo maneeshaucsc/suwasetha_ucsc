@@ -1,0 +1,109 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-8">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title">Edit Profile</h4>
+                      <p class="card-category">Complete your profile</p>
+                  </div>
+                  <div class="card-body">
+                      <form class="create-form" [formGroup]="doctorForm" novalidate (ngSubmit)="onSubmit(doctorForm.value)">
+                          <div class="row">
+
+                              <div class="col-md-2">
+                                <div class="form-group">
+                                  <mat-form-field class="input-style">
+                                    <input matInput placeholder="Mr." class="form-control" formControlName="mr">
+                                  </mat-form-field>
+                                  <ng-container *ngFor="let validation of validation_messages.mr">
+                                    <mat-error *ngIf="doctorForm.get('mr').hasError(validation.type) && (doctorForm.get('mr').dirty || doctorForm.get('mr').touched)">{{validation}}</mat-error>
+                                  </ng-container>
+                                </div>
+                              </div>
+
+                              <div class="col-md-5">
+                                <div class="form-group">
+                                  <mat-form-field class="input-style">
+                                    <input matInput placeholder="User Name" class="form-control" formControlName="username">
+                                  </mat-form-field>
+                                  <ng-container *ngFor="let validation of validation_messages.username">
+                                    <mat-error *ngIf="doctorForm.get('username').hasError(validation.type) && (doctorForm.get('username').dirty || doctorForm.get('username').touched)">{{validation}}</mat-error>
+                                  </ng-container>
+                                </div>
+                              </div>
+
+                              <div class="col-md-5">
+                                <div class="form-group">
+                                  <mat-form-field class="input-style">
+                                    <input matInput type="email" placeholder="admin@suwasetha.lk" class="form-control" formControlName="email">
+                                  </mat-form-field>
+                                  <ng-container *ngFor="let validation of validation_messages.email">
+                                    <mat-error *ngIf="doctorForm.get('email').hasError(validation.type) && (doctorForm.get('email').dirty || doctorForm.get('email').touched)">{{validation}}</mat-error>
+                                  </ng-container>
+                                </div>
+                              </div>
+
+                          </div>
+                          <div class="row">
+
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <mat-form-field class="input-style">
+                                  <input matInput placeholder="First Name" class="form-control" formControlName="fName">
+                                </mat-form-field>
+                                <ng-container *ngFor="let validation of validation_messages.fName">
+                                  <mat-error *ngIf="doctorForm.get('fName').hasError(validation.type) && (doctorForm.get('fName').dirty || doctorForm.get('fName').touched)">{{validation}}</mat-error>
+                                </ng-container>
+                              </div>
+                            </div>
+
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <mat-form-field class="input-style">
+                                  <input matInput placeholder="Last Name" class="form-control" formControlName="lName">
+                                </mat-form-field>
+                                <ng-container *ngFor="let validation of validation_messages.lName">
+                                  <mat-error *ngIf="doctorForm.get('lName').hasError(validation.type) && (doctorForm.get('lName').dirty || doctorForm.get('lName').touched)">{{validation}}</mat-error>
+                                </ng-container>
+                              </div>
+                            </div>
+
+                          </div>
+                          <div class="row">
+                            <div class="col-md-4">
+                              <div class="form-group">
+                                <mat-form-field class="input-style">
+                                  <input matInput type="number" placeholder="Telephone" class="form-control" formControlName="telNo">
+                                </mat-form-field>
+                                <ng-container *ngFor="let validation of validation_messages.telNo">
+                                  <mat-error *ngIf="doctorForm.get('telNo').hasError(validation.type) && (doctorForm.get('telNo').dirty || doctorForm.get('telNo').touched)">{{validation}}</mat-error>
+                                </ng-container>
+                              </div>
+                            </div>
+
+                            <div class="col-md-8">
+                              <div class="form-group">
+                                <mat-form-field class="input-style">
+                                  <input matInput placeholder="About Me" class="form-control" formControlName="about">
+                                </mat-form-field>
+                                <ng-container *ngFor="let validation of validation_messages.about">
+                                  <mat-error *ngIf="doctorForm.get('about').hasError(validation.type) && (doctorForm.get('about').dirty || doctorForm.get('about').touched)">{{validation}}</mat-error>
+                                </ng-container>
+                              </div>
+                            </div>
+                          </div>
+                        
+                          <div class="submit-button-container">
+                            <button mat-raised-button type="submit" class="submit-button pull-right" color="primary" [disabled]="!doctorForm.valid">Add to Profile</button>
+                          </div>
+                         
+                          <div class="clearfix"></div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+          
+      </div>
+  </div>
+</div>
